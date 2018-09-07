@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(eml)
 
-#find_package(catkin REQUIRED roscpp)
+find_package(Threads)
 
 include_directories(include)
 
@@ -23,7 +23,7 @@ add_library(${PROJECT_NAME} SHARED
     src/ethercat_posix_drv.cxx
 )
 
-target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
 install(TARGETS ${PROJECT_NAME}
    LIBRARY DESTINATION lib
