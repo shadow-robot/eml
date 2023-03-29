@@ -13,7 +13,7 @@ To build and install:
 # cd eml
 # mkdir build
 # cd build
-# cmake ..
+# cmake -DCMAKE_INSTALL_PREFIX:PATH=${HOME} ..
 # make
-# sudo make install
+# make install
 ```
